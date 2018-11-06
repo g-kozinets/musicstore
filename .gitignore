@@ -64,7 +64,4 @@ fabric.properties
 .gitignore
 .idea/
 musicstore.iml
-src/main/java/by/glko2012/mcstore/controller/
-src/main/java/by/glko2012/mcstore/dao/
-src/main/webapp/WEB-INF/lib/
 target/
