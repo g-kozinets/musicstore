@@ -4,7 +4,7 @@ public class Manufacturers {
     private String location;
     private String name;
     private String manuf_id;
-ewfewfewfw
+
     //constructors   //getter-setters
     public String setLocation(String location) {
         return this.location = location;

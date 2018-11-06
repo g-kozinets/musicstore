@@ -4,7 +4,6 @@ public class Addresses {
     private String address;
     private String street_name;
     private String street_number;
-ewfewfewf
     //constructors   //getter-setters
     public String setaddress(String address) {
         return this.address = address;
