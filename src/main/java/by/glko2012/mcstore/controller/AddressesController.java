@@ -19,7 +19,8 @@ import java.io.IOException;
 public class AddressesController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static String insert_or_edit = "WEB-INF/Address.jsp";
+    private static String edit = "WEB-INF/Address.jsp";
+    private static String insert = "WEB-INF/AddressInsert.jsp";
     private static String list_address = "WEB-INF/listAddress.jsp";
     private AddressesDAO addressesDAOImpl;
 
@@ -32,7 +33,7 @@ public class AddressesController extends HttpServlet {
         String forward = "";
         String action = request.getParameter("action");
         if ("delete".equalsIgnoreCase(action)) {
-            int productId = Integer.parseInt(request.getParameter("addressId"));
+            int productId = Integer.parseInt(request.getParameter("addressID"));
 
             addressesDAOImpl.removeAddress(productId);
 
@@ -40,7 +41,7 @@ public class AddressesController extends HttpServlet {
             request.setAttribute("addresses", addressesDAOImpl.getAddresses());
 
         } else if ("edit".equalsIgnoreCase(action)) {
-           forward = insert_or_edit;
+           forward = edit;
             int addressID = Integer.parseInt(request.getParameter("addressID"));
             Addresses address = addressesDAOImpl.getAddressById(addressID);
             request.setAttribute("address", address);
@@ -51,7 +52,9 @@ public class AddressesController extends HttpServlet {
 
         } else if ("insert".equalsIgnoreCase(action)) {
 
-           forward = insert_or_edit;
+
+           forward = insert;
+           request.setAttribute("nextIncrement", addressesDAOImpl.getNextAi());
 
         }
         RequestDispatcher view = request.getRequestDispatcher(forward);
@@ -61,10 +64,10 @@ public class AddressesController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Addresses addresses = new Addresses();
-        addresses.setaddressID(Integer.valueOf(request.getParameter("addressId")));
+       //addresses.setaddressID(Integer.valueOf(request.getParameter("addressID")));
         addresses.setstreet_name(request.getParameter("street_name"));
         addresses.setstreet_number(request.getParameter("street_number"));
-        String addressId = request.getParameter("addressId");
+        String addressId = request.getParameter("addressID");
 
         if (addressId == null || addressId.isEmpty()) {
             addressesDAOImpl.addAddress(addresses);

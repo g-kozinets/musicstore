@@ -39,13 +39,16 @@
                 <thead>
                 <tr>
                     <th>
-                        ID
+                        Address id
                     </th>
                     <th>
-                        name
+                        Street name
                     </th>
                     <th>
-                        number
+                        Street number
+                    </th>
+                    <th>
+                        Action
                     </th>
                 </tr>
                 </thead>
@@ -61,12 +64,17 @@
                         <td class="overflowHidden">
                             <c:out value="${address.street_number}"/>
                         </td>
+                        <td td class="overflowHidden">
+                            <a href="AddressesController?action=edit&addressID=<c:out value="${address.addressID}"/>">Update</a>
+                            <a>/</a>
+                            <a href="AddressesController?action=delete&addressID=<c:out value="${address.addressID}"/>">Delete</a>
+                        </td>
 
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="ProductController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
+            <a href="AddressesController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
 
         </div>
     </section>

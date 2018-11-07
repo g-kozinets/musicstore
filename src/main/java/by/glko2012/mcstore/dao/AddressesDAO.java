@@ -13,5 +13,8 @@ public interface AddressesDAO {
 
     List<Addresses> getAddresses();
 
+
+    int getNextAi();
+
     Addresses getAddressById(int addressId);
 }

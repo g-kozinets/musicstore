@@ -11,10 +11,11 @@ import java.util.ArrayList;
 public class AddressDAOimpl implements AddressesDAO  {
 
         private static final String INSERT_ADDRESS = "INSERT INTO mydb.addresses (street_name, street_number) VALUES (?, ?)";
-        private static final String SELECT_ADDRESS = "SELECT * FROM mydb.addresses WHERE addresses.addressPK_ID =?";
+        private static final String SELECT_ADDRESS = "SELECT * FROM mydb.addresses WHERE adressPK_ID =?";
         private static final String SELECT_ADDRESSES = "SELECT * FROM mydb.addresses";
-        private static final String UPDATE_ADDRESS = "UPDATE mydb.addresses SET street_name=?, street_number=? WHERE addresses.addressPK_ID=?";
-        private static final String DELETE_ADDRESS = "DELETE FROM mydb.addresses WHERE addresses.addressPK_ID=?";
+        private static final String UPDATE_ADDRESS = "UPDATE mydb.addresses SET street_name=?, street_number=? WHERE adressPK_ID=?";
+        private static final String DELETE_ADDRESS = "DELETE FROM mydb.addresses WHERE adressPK_ID=?";
+        private static final String NEXT_INCREMENT = "SELECT auto_increment FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'addresses'";
 
         private final DataSource dataSource;
 
@@ -66,6 +67,20 @@ public class AddressDAOimpl implements AddressesDAO  {
             }
         }
 
+    public int getNextAi() {
+        try (Connection connection = dataSource.getConnection()) {
+            int newID = 0;
+            try (Statement stmt = connection.createStatement();
+                 ResultSet result = stmt.executeQuery(NEXT_INCREMENT)) {
+                if(result.first()) {
+                    newID = result.getInt("AUTO_INCREMENT");
+                }
+                            }
+            return newID;
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        }
+    }
         @Override
         public ArrayList<Addresses> getAddresses() {
             try (Connection connection = dataSource.getConnection()) {
@@ -94,7 +109,7 @@ public class AddressDAOimpl implements AddressesDAO  {
                     statement.setInt(1, addressID);
                     try (ResultSet res = statement.executeQuery()) {
                         if (res.next()) {
-                            address.setaddressID(res.getInt("adress_id"));
+                            address.setaddressID(res.getInt("adressPK_id"));
                             address.setstreet_name(res.getString("street_name"));
                             address.setstreet_number(res.getString("street_number"));
                         }
