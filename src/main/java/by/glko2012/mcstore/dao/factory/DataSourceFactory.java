@@ -16,7 +16,7 @@ public class DataSourceFactory {
     public DataSourceFactory() {
         dataSource = new HikariDataSource();
         dataSource.setMaximumPoolSize(2);
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setJdbcUrl(URL);
         dataSource.setUsername(USER);
         dataSource.setPassword(PASSWORD);

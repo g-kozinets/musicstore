@@ -12,6 +12,10 @@ public class DAOFactory {
     private OrdersDAO ordersDAO = new OrdersDAOimpl(DataSourceFactory.getDataSourceFactory().getDataSource());
     private SuppliersDAO suppliersDAO = new SuppliersDAOimpl(DataSourceFactory.getDataSourceFactory().getDataSource());
 
+    public AddressesDAO getAddressesDAO() {
+        return addressesDAO;
+    }
+
     public InstrumentsDAO getInstrumentsDAO() {
         return instrumentsDAO;
     }

@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class AddressDAOimpl implements AddressesDAO  {
 
-        private static final String INSERT_ADDRESS = "INSERT INTO addresses (street_name, street_number) VALUES (?, ?)";
-        private static final String SELECT_ADDRESS = "SELECT * FROM addresses WHERE product.id =?";
-        private static final String SELECT_ADDRESSES = "SELECT * FROM addresses";
-        private static final String UPDATE_ADDRESS = "UPDATE addresses SET street_name=?, street_number=? WHERE addresses.addressPK_ID=?";
-        private static final String DELETE_ADDRESS = "DELETE FROM addresses WHERE addresses.addressPK_ID=?";
+        private static final String INSERT_ADDRESS = "INSERT INTO mydb.addresses (street_name, street_number) VALUES (?, ?)";
+        private static final String SELECT_ADDRESS = "SELECT * FROM mydb.addresses WHERE addresses.addressPK_ID =?";
+        private static final String SELECT_ADDRESSES = "SELECT * FROM mydb.addresses";
+        private static final String UPDATE_ADDRESS = "UPDATE mydb.addresses SET street_name=?, street_number=? WHERE addresses.addressPK_ID=?";
+        private static final String DELETE_ADDRESS = "DELETE FROM mydb.addresses WHERE addresses.addressPK_ID=?";
 
         private final DataSource dataSource;
 
