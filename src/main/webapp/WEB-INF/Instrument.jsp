@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Add or Edit product</title>
+    <title>Add or Edit Instrument</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -19,20 +19,35 @@
 <%@ include file="header.html"%>
 
 <div class="container">
-    <form method="POST" action='AddressesController' name="frmAddAddress" role="form">
+    <form method="POST" action='InstrumentsController' name="frmAddInstrument" role="form">
         <div class="form-group">
-            <label for="addressID">
-                Address ID: <input class="form-control" type="text" id="addressID" name="addressID" readonly value="<c:out value="${address.addressID}" />" />
+            <label for="instrumentID">
+                Street name:<input class="form-control" type="number" id="instrumentID" name="instrumentID" value="<c:out value="${instrument.instrumentID}" />" />
             </label>
         </div>
         <div class="form-group">
-            <label for="street_name">
-                Street name:<input class="form-control" type="text" id="street_name" name="street_name" value="<c:out value="${address.street_name}" />" />
+            <label for="inst_name">
+                Instrument name:<input class="form-control" type="text" id="inst_name" name="inst_name" value="<c:out value="${instrument.inst_name}" />" />
             </label>
         </div>
         <div class="form-group">
-            <label for="street_number">
-                Street number: <input class="form-control" type="text" id="street_number" name="street_number" value="<c:out value="${address.street_number}" />" />
+            <label for="type">
+                Instrument type: <input class="form-control" type="text" id="type" name="type" value="<c:out value="${instrument.type}" />" />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="manufFK_id">
+                Manufacture ID: <input class="form-control" type="number" id="manufFK_id" name="manufFK_id" value="<c:out value="${instrument.manufFK_id}" />" />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="supplFK_id">
+                Supplier ID: <input class="form-control" type="text" id="supplFK_id" name="supplFK_id" value="<c:out value="${instrument.supplFK_id}" />" />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="price">
+                Price: <input class="form-control" type="text" id="price" name="price" value="<c:out value="${instrument.price}" />" />
             </label>
         </div>
         <input type="submit" value="Submit" class="btn btn-outline-success" />

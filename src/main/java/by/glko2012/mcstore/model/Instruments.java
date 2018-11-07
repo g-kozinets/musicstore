@@ -1,19 +1,19 @@
 package by.glko2012.mcstore.model;
 
 public class Instruments {
-    private int inst_id;
+    private int instrumentID;
     private String inst_name;
     private String type;
     private int manufFK_id;
     private int supplFK_id;
     private double price;
 
-    public int getInst_id() {
-        return inst_id;
+    public int getInstrumentID() {
+        return instrumentID;
     }
 
-    public void setInst_id(int inst_id) {
-        this.inst_id = inst_id;
+    public void setInstrumentID(int instrumentID) {
+        this.instrumentID = instrumentID;
     }
 
     public String getInst_name() {

@@ -14,5 +14,8 @@ public interface InstrumentsDAO {
 
     List<Instruments> getInstruments();
 
-    Instruments getInstrumentById(int instrumentId);
+    Instruments getInstrumentById(int instrumentID);
+
+    int getNextAi();
+
 }
