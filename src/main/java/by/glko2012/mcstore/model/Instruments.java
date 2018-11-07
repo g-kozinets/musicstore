@@ -1,18 +1,18 @@
 package by.glko2012.mcstore.model;
 
 public class Instruments {
-    private String inst_id;
+    private int inst_id;
     private String inst_name;
     private String type;
-    private String manufFK_id;
-    private String supplFK_id;
-    private String price;
+    private int manufFK_id;
+    private int supplFK_id;
+    private double price;
 
-    public String getInst_id() {
+    public int getInst_id() {
         return inst_id;
     }
 
-    public void setInst_id(String inst_id) {
+    public void setInst_id(int inst_id) {
         this.inst_id = inst_id;
     }
 
@@ -32,27 +32,27 @@ public class Instruments {
         this.type = type;
     }
 
-    public String getManufFK_id() {
+    public int getManufFK_id() {
         return manufFK_id;
     }
 
-    public void setManufFK_id(String manufFK_id) {
+    public void setManufFK_id(int manufFK_id) {
         this.manufFK_id = manufFK_id;
     }
 
-    public String getSupplFK_id() {
+    public int getSupplFK_id() {
         return supplFK_id;
     }
 
-    public void setSupplFK_id(String supplFK_id) {
+    public void setSupplFK_id(int supplFK_id) {
         this.supplFK_id = supplFK_id;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -1,16 +1,16 @@
 package by.glko2012.mcstore.model;
 
 public class Addresses {
-    private String address;
+    private int addressID;
     private String street_name;
     private String street_number;
     //constructors   //getter-setters
-    public String setaddress(String address) {
-        return this.address = address;
+    public int setaddressID(int address) {
+        return this.addressID = address;
     }
 
-    public String getAdress() {
-        return this.address;
+    public int getAddressID() {
+        return this.addressID;
     }
 
     public String setstreet_name(String street_name) {
