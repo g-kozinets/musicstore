@@ -1,17 +1,17 @@
 package by.glko2012.mcstore.model;
 
 public class Orders {
-    private String order_id;
+    private int order_id;
     private String order_name;
-    private String addressFK_id;
-    private String total_price;
-    private String instrFK_id;
+    private int addressFK_id;
+    private double total_price;
+    private int instrFK_id;
 
-    public String getOrder_id() {
+    public int getOrder_id() {
         return order_id;
     }
 
-    public void setOrder_id(String order_id) {
+    public void setOrder_id(int order_id) {
         this.order_id = order_id;
     }
 
@@ -23,27 +23,27 @@ public class Orders {
         this.order_name = order_name;
     }
 
-    public String getAddressFK_id() {
+    public int getAddressFK_id() {
         return addressFK_id;
     }
 
-    public void setAddressFK_id(String addressFK_id) {
+    public void setAddressFK_id(int addressFK_id) {
         this.addressFK_id = addressFK_id;
     }
 
-    public String getTotal_price() {
+    public double getTotal_price() {
         return total_price;
     }
 
-    public void setTotal_price(String total_price) {
+    public void setTotal_price(double total_price) {
         this.total_price = total_price;
     }
 
-    public String getInstrFK_id() {
+    public int getInstrFK_id() {
         return instrFK_id;
     }
 
-    public void setInstrFK_id(String instrFK_id) {
+    public void setInstrFK_id(int instrFK_id) {
         this.instrFK_id = instrFK_id;
     }
 

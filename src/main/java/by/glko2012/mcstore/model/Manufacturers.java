@@ -3,7 +3,7 @@ package by.glko2012.mcstore.model;
 public class Manufacturers {
     private String location;
     private String name;
-    private String manuf_id;
+    private int manuf_id;
 
     //constructors   //getter-setters
     public String setLocation(String location) {
@@ -22,11 +22,11 @@ public class Manufacturers {
         return this.name;
     }
 
-    public String setManuf_id(String manuf_id) {
+    public int setManuf_id(int manuf_id) {
         return this.manuf_id = manuf_id;
     }
 
-    public String getManuf_id() {
+    public int getManuf_id() {
         return this.manuf_id;
     }
 }
