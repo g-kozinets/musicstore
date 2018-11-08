@@ -26,11 +26,6 @@
 <body>
 <%@ include file="header.html" %>
 
-<%--<c:if test="${not empty warning}">--%>
-<%--<div class="alert alert-danger alert-dismissible">--%>
-<%--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>--%>
-<%--<strong>Error!</strong> Insert/Edit failed. Please, enter valid values.</div>--%>
-<%--</c:if>--%>
 
 <div class="wrap">
     <section>
@@ -74,7 +69,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="ManufacturersController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
+            <a href="ManufacturersController?action=insert" class="btn btn-danger" role="button">Add new</a>
 
         </div>
     </section>

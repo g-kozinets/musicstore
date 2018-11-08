@@ -22,7 +22,7 @@
     <form method="POST" action='InstrumentsController' name="frmAddInstrument" role="form">
         <div class="form-group">
             <label for="instrumentID">
-                Street name:<input class="form-control" type="number" id="instrumentID" name="instrumentID" value="<c:out value="${instrument.instrumentID}" />" />
+                Instrument ID:<input class="form-control" type="number" id="instrumentID" name="instrumentID" readonly value="<c:out value="${instrument.instrumentID}" />" />
             </label>
         </div>
         <div class="form-group">
@@ -42,15 +42,15 @@
         </div>
         <div class="form-group">
             <label for="supplFK_id">
-                Supplier ID: <input class="form-control" type="text" id="supplFK_id" name="supplFK_id" value="<c:out value="${instrument.supplFK_id}" />" />
+                Supplier ID: <input class="form-control" type="number" id="supplFK_id" name="supplFK_id" value="<c:out value="${instrument.supplFK_id}" />" />
             </label>
         </div>
         <div class="form-group">
             <label for="price">
-                Price: <input class="form-control" type="text" id="price" name="price" value="<c:out value="${instrument.price}" />" />
+                Price: <input class="form-control" type="number" id="price" name="price" value="<c:out value="${instrument.price}" />" />
             </label>
         </div>
-        <input type="submit" value="Submit" class="btn btn-outline-success" />
+        <input type="submit" value="Submit" class="btn btn-danger" />
     </form>
 </div>
 

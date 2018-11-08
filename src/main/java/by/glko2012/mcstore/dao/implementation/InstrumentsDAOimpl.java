@@ -126,6 +126,7 @@ public class InstrumentsDAOimpl implements InstrumentsDAO {
                             instrument.setType(res.getString("type"));
                             instrument.setManufFK_id(res.getInt("manufctFK_ID"));
                             instrument.setSupplFK_id(res.getInt("supplierFK_ID"));
+                            instrument.setPrice(res.getDouble("price"));
                         }
                     }
                 }

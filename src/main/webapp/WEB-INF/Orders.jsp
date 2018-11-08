@@ -22,30 +22,30 @@
     <form method="POST" action='OrdersController' name="frmAddOrders" role="form">
         <div class="form-group">
             <label for="order_id">
-                Address ID: <input class="form-control" type="number" id="order_id" name="order_id" readonly value="<c:out value="${orders.order_id}" />" />
+                Order ID: <input class="form-control" type="number" id="order_id" name="order_id" readonly value="<c:out value="${order.order_id}" />" />
             </label>
         </div>
         <div class="form-group">
             <label for="order_name">
-                Street name:<input class="form-control" type="text" id="order_name" name="order_name" value="<c:out value="${orders.order_name}" />" />
+                Order name:<input class="form-control" type="text" id="order_name" name="order_name" value="<c:out value="${order.order_name}" />" />
             </label>
         </div>
         <div class="form-group">
             <label for="addressFK_id">
-                Street number: <input class="form-control" type="text" id="addressFK_id" name="addressFK_id" value="<c:out value="${orders.addressFK_id}" />" />
+                Address ID: <input class="form-control" type="number" id="addressFK_id" name="addressFK_id" value="<c:out value="${order.addressFK_id}" />" />
             </label>
         </div>
         <div class="form-group">
             <label for="instrFK_id">
-                Street number: <input class="form-control" type="text" id="instrFK_id" name="instrFK_id" value="<c:out value="${orders.instrFK_id}" />" />
+                Instrument ID: <input class="form-control" type="number" id="instrFK_id" name="instrFK_id" value="<c:out value="${order.instrFK_id}" />" />
             </label>
         </div>
         <div class="form-group">
             <label for="total_price">
-                Street number: <input class="form-control" type="text" id="total_price" name="total_price" value="<c:out value="${orders.total_price}" />" />
+                Total price: <input class="form-control" type="number" id="total_price" name="total_price" value="<c:out value="${order.total_price}" />" />
             </label>
         </div>
-        <input type="submit" value="Submit" class="btn btn-outline-success" />
+        <input type="submit" value="Submit" class="btn btn-danger" />
     </form>
 </div>
 

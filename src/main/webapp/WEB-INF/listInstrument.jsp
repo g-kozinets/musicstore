@@ -35,28 +35,28 @@
 <div class="wrap">
     <section>
         <div class="container">
-            <table class="table table-striped" style="table-layout: fixed">
-                <thead>
+            <table class="table table-striped " style="table-layout: fixed">
+                <thead class="thread-dark">
                 <tr>
-                    <th>
+                    <th scope="col">
                         Instrument id
                     </th>
-                    <th>
+                    <th scope="col">
                         Instrument name
                     </th>
-                    <th>
+                    <th scope="col">
                         Instrument type
                     </th>
-                    <th>
+                    <th scope="col">
                         Manufacture
                     </th>
-                    <th>
+                    <th scope="col">
                         Supplier
                     </th>
-                    <th>
+                    <th scope="col">
                         Price
                     </th>
-                    <th>
+                    <th scope="col">
                         Action
                     </th>
                 </tr>
@@ -92,7 +92,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="InstrumentsController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
+            <a href="InstrumentsController?action=insert" class="btn btn-danger" role="button">Add new</a>
 
         </div>
     </section>

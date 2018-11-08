@@ -41,9 +41,9 @@ public class InstrumentsController extends HttpServlet {
 
         } else if ("edit".equalsIgnoreCase(action)) {
             forward = edit;
-            int addressID = Integer.parseInt(request.getParameter("instrumentID"));
-            Instruments instrument = instrumentsDAOImpl.getInstrumentById(addressID);
-            request.setAttribute("address", instrument);
+            int instrumentID = Integer.parseInt(request.getParameter("instrumentID"));
+            Instruments instrument = instrumentsDAOImpl.getInstrumentById(instrumentID);
+            request.setAttribute("instrument", instrument);
 
         } else if ("listInstrument".equalsIgnoreCase(action)) {
             forward = list_instruments;

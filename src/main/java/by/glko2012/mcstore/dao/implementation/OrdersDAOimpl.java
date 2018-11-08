@@ -61,7 +61,8 @@ public class OrdersDAOimpl implements OrdersDAO {
                 statement.setString(1, order.getOrder_name());
                 statement.setInt(2, order.getAddressFK_id());
                 statement.setDouble(3, order.getTotal_price());
-                statement.setInt(4, order.getOrder_id());
+                statement.setInt(4, order.getInstrFK_id());
+                statement.setInt(5, order.getOrder_id());
                 statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -92,18 +93,18 @@ public class OrdersDAOimpl implements OrdersDAO {
     }
 
     @Override
-    public Orders getOrderById(int orderId) {
+    public Orders getOrderById(int order_id) {
         try (Connection connection = dataSource.getConnection()) {
             Orders order = new Orders();
             try (PreparedStatement statement = connection.prepareStatement(SELECT_ORDER)) {
-                statement.setInt(1, orderId);
+                statement.setInt(1, order_id);
                 try (ResultSet res = statement.executeQuery()) {
                     if (res.next()) {
                         order.setOrder_id(res.getInt("orderPK_id"));
                         order.setOrder_name(res.getString("order_name"));
                         order.setAddressFK_id(res.getInt("addressFK_ID"));
                         order.setTotal_price(res.getDouble("total_price"));
-                        order.setInstrFK_id(res.getInt("instr_id"));
+                        order.setInstrFK_id(res.getInt("instrFK_id"));
                     }
                 }
             }

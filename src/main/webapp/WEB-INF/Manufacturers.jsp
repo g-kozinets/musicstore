@@ -35,7 +35,7 @@
                 Manufacture location: <input class="form-control" type="text" id="location" name="location" value="<c:out value="${manufacture.location}" />" />
             </label>
         </div>
-        <input type="submit" value="Submit" class="btn btn-outline-success" />
+        <input type="submit" value="Submit" class="btn btn-danger" />
     </form>
 </div>
 

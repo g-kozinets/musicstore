@@ -45,8 +45,8 @@ public class OrdersController extends HttpServlet {
         } else if ("edit".equalsIgnoreCase(action)) {
             forward = edit;
             int order_id = Integer.parseInt(request.getParameter("order_id"));
-            Orders orders = ordersDAOimpl.getOrderById(order_id);
-            request.setAttribute("order", order_id);
+            Orders order = ordersDAOimpl.getOrderById(order_id);
+            request.setAttribute("order", order);
 
         } else if ("listOrder".equalsIgnoreCase(action)) {
             forward = list_address;

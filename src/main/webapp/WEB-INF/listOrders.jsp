@@ -26,11 +26,6 @@
 <body>
 <%@ include file="header.html" %>
 
-<%--<c:if test="${not empty warning}">--%>
-<%--<div class="alert alert-danger alert-dismissible">--%>
-<%--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>--%>
-<%--<strong>Error!</strong> Insert/Edit failed. Please, enter valid values.</div>--%>
-<%--</c:if>--%>
 
 <div class="wrap">
     <section>
@@ -59,34 +54,34 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${order_id}" var="orders">
+                <c:forEach items="${orders}" var="order">
                     <tr>
                         <td class="overflowHidden">
-                            <c:out value="${orders.order_id}"/>
+                            <c:out value="${order.order_id}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${orders.order_name}"/>
+                            <c:out value="${order.order_name}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${orders.addressFK_id}"/>
+                            <c:out value="${order.addressFK_id}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${orders.instrFK_id}"/>
+                            <c:out value="${order.instrFK_id}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${orders.total_price}"/>
+                            <c:out value="${order.total_price}"/>
                         </td>
                         <td td class="overflowHidden">
-                            <a href="OrdersController?action=edit&order_id=<c:out value="${orders.order_id}"/>">Update</a>
+                            <a href="OrdersController?action=edit&order_id=<c:out value="${order.order_id}"/>">Update</a>
                             <a>/</a>
-                            <a href="OrdersController?action=delete&order_id=<c:out value="${orders.order_id}"/>">Delete</a>
+                            <a href="OrdersController?action=delete&order_id=<c:out value="${order.order_id}"/>">Delete</a>
                         </td>
 
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="OrdersController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
+            <a href="OrdersController?action=insert" class="btn btn-danger" role="button">Add new</a>
 
         </div>
     </section>

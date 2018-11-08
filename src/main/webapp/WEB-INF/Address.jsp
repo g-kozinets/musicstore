@@ -35,7 +35,7 @@
                 Street number: <input class="form-control" type="text" id="street_number" name="street_number" value="<c:out value="${address.street_number}" />" />
             </label>
         </div>
-        <input type="submit" value="Submit" class="btn btn-outline-success" />
+        <input type="submit" value="Submit" class="btn btn-danger" />
     </form>
 </div>
 

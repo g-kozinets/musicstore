@@ -80,7 +80,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="SuppliersController?action=insert" class="btn btn-outline-primary" role="button">Add new</a>
+            <a href="SuppliersController?action=insert" class="btn btn-danger" role="button">Add new</a>
 
         </div>
     </section>

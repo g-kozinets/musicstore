@@ -1,3 +1,8 @@
 .overflowHidden {
     overflow: hidden;
 }
+
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #CC3333;
+}
