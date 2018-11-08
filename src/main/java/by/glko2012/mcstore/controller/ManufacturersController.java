@@ -27,7 +27,6 @@ public class ManufacturersController extends HttpServlet {
     private ManufacturersDAO manufacturersDAOImpl;
 
     public ManufacturersController() {
-        super();
         manufacturersDAOImpl = DAOFactory.getInstance().getManufacturersDAO();
     }
 

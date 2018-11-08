@@ -24,7 +24,6 @@ public class InstrumentsController extends HttpServlet {
     private InstrumentsDAO instrumentsDAOImpl;
 
     public InstrumentsController() {
-        super();
         instrumentsDAOImpl = DAOFactory.getInstance().getInstrumentsDAO();
     }
 

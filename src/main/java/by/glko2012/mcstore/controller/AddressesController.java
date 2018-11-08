@@ -25,7 +25,7 @@ public class AddressesController extends HttpServlet {
     private AddressesDAO addressesDAOImpl;
 
     public AddressesController() {
-        super();
+       // super();
         addressesDAOImpl = DAOFactory.getInstance().getAddressesDAO();
     }
 
