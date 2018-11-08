@@ -63,10 +63,9 @@
                             <c:out value="${order.order_name}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${order.addressFK_id}"/>
-                        </td>
+                            <a href="AddressesController?action=edit&addressID=<c:out value="${order.addressFK_id}"/>"><c:out value="${order.addressFK_id}"/></a>                        </td>
                         <td class="overflowHidden">
-                            <c:out value="${order.instrFK_id}"/>
+                            <a href="InstrumentsController?action=edit&instrumentID=<c:out value="${order.instrFK_id}"/>"><c:out value="${order.instrFK_id}"/></a>                        </td>
                         </td>
                         <td class="overflowHidden">
                             <c:out value="${order.total_price}"/>

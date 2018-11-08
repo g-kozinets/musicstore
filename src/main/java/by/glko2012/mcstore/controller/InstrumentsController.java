@@ -53,7 +53,7 @@ public class InstrumentsController extends HttpServlet {
 
 
             forward = insert;
-            request.setAttribute("nextIncrement", instrumentsDAOImpl.getNextAi());
+            //request.setAttribute("nextIncrement", instrumentsDAOImpl.getNextAi());
 
         }
         RequestDispatcher view = request.getRequestDispatcher(forward);
@@ -68,7 +68,7 @@ public class InstrumentsController extends HttpServlet {
         instruments.setType(request.getParameter("Type"));
         instruments.setManufFK_id(Integer.valueOf(request.getParameter("ManufFK_id")));
         instruments.setSupplFK_id(Integer.valueOf(request.getParameter("SupplFK_id")));
-        instruments.setPrice(Integer.valueOf(request.getParameter("Price")));
+        instruments.setPrice(Double.valueOf(request.getParameter("Price")));
         String instrumentId = request.getParameter("instrumentID");
 
         if (instrumentId == null || instrumentId.isEmpty()) {

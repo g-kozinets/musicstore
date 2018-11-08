@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class InstrumentsDAOimpl implements InstrumentsDAO {
 
-        private static final String INSERT_INSTRUMENT = "INSERT INTO mydb.instruments (instr_name, type, manufct_FK_id, supplierFK_id, price) VALUES (?, ?, ?, ?, ?)";
+        private static final String INSERT_INSTRUMENT = "INSERT INTO mydb.instruments (instr_name, 'type', manufct_FK_id, supplierFK_id, price) VALUES (?, ?, ?, ?, ?)";
         private static final String SELECT_INSTRUMENT = "SELECT * FROM mydb.instruments WHERE instruments.instrPK_id =?";
         private static final String SELECT_INSTRUMENTS = "SELECT * FROM mydb.instruments";
         private static final String UPDATE_INSTRUMENT = "UPDATE mydb.instruments SET instr_name=?, type=?, manufct_id, supplierFK_id WHERE instruments.instrPK_ID=?";

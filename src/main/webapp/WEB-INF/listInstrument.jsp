@@ -74,10 +74,11 @@
                             <c:out value="${instrument.type}"/>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${instrument.manufFK_id}"/>
+                            <a href="ManufacturersController?action=edit&manuf_id=<c:out value="${instrument.manufFK_id}"/>"><c:out value="${instrument.manufFK_id}"/></a>
                         </td>
                         <td class="overflowHidden">
-                            <c:out value="${instrument.supplFK_id}"/>
+                            <a href="SuppliersController?action=edit&suppl_id=<c:out value="${instrument.supplFK_id}"/>"><c:out value="${instrument.supplFK_id}"/></a>
+                        </td>
                         </td>
                         <td class="overflowHidden">
                             <c:out value="${instrument.price}"/>
