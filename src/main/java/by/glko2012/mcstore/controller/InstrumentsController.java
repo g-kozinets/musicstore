@@ -78,7 +78,7 @@ public class InstrumentsController extends HttpServlet {
             instrumentsDAOImpl.updateInstrument(instruments);
         }
 
-        response.sendRedirect(request.getContextPath() + "AddressesController?action=listAddress");
+        response.sendRedirect(request.getContextPath() + "InstrumentsController?action=listInstrument");
 
     }
 

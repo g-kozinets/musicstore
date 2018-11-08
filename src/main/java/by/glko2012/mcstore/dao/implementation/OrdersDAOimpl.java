@@ -80,7 +80,7 @@ public class OrdersDAOimpl implements OrdersDAO {
                     order.setOrder_id(res.getInt("orderPK_id"));
                     order.setOrder_name(res.getString("order_name"));
                     order.setAddressFK_id(res.getInt("addressFK_ID"));
-                    order.setTotal_price(res.getDouble("totsl_price"));
+                    order.setTotal_price(res.getDouble("total_price"));
                     order.setInstrFK_id(res.getInt("instrFK_ID"));
                     orders.add(order);
                 }

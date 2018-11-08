@@ -60,6 +60,7 @@ public class SuppliersDAOimpl implements SuppliersDAO{
                 statement.setString(1, supplier.getSuppl_name());
                 statement.setString(2, supplier.getSuppl_location());
                 statement.setDouble(3, supplier.getDelivery_price());
+                statement.setInt(4, supplier.getSuppl_id());
                 statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -75,10 +76,10 @@ public class SuppliersDAOimpl implements SuppliersDAO{
                  ResultSet res = stmt.executeQuery(SELECT_SUPPLIERS)) {
                 while (res.next()) {
                     Suppliers supplier = new Suppliers();
-                    supplier.setSuppl_id(res.getInt("orderPK_id"));
-                    supplier.setSuppl_name(res.getString("order_name"));
-                    supplier.setSuppl_location(res.getString("addressFK_ID"));
-                    supplier.setDelivery_price(res.getDouble("totsl_price"));
+                    supplier.setSuppl_id(res.getInt("supplierPK_id"));
+                    supplier.setSuppl_name(res.getString("supplier_name"));
+                    supplier.setSuppl_location(res.getString("supplier_location"));
+                    supplier.setDelivery_price(res.getDouble("delivery_price"));
                     suppliers.add(supplier);
                 }
             }
@@ -96,8 +97,8 @@ public class SuppliersDAOimpl implements SuppliersDAO{
                 statement.setInt(1, supplierId);
                 try (ResultSet res = statement.executeQuery()) {
                     if (res.next()) {
-                        supplier.setSuppl_id(res.getInt("supplier"));
-                        supplier.setSuppl_name(res.getString("supplier"));
+                        supplier.setSuppl_id(res.getInt("supplierPK_id"));
+                        supplier.setSuppl_name(res.getString("supplier_name"));
                         supplier.setSuppl_location(res.getString("supplier_location"));
                         supplier.setDelivery_price(res.getDouble("delivery_price"));
                     }

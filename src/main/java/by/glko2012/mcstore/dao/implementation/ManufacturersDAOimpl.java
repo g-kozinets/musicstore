@@ -70,18 +70,18 @@ public class ManufacturersDAOimpl implements ManufacturersDAO {
     @Override
     public ArrayList<Manufacturers> getManufacturers() {
         try (Connection connection = dataSource.getConnection()) {
-            ArrayList<Manufacturers> instruments = new ArrayList<>();
+            ArrayList<Manufacturers> manufacturer = new ArrayList<>();
             try (Statement stmt = connection.createStatement();
                  ResultSet res = stmt.executeQuery(SELECT_MANUFACTURERS)) {
                 while (res.next()) {
                     Manufacturers manufacturers = new Manufacturers();
-                    manufacturers.setManuf_id(res.getInt("manufctPK_id"));
+                    manufacturers.setManuf_id(res.getInt("manufacturePK_id"));
                     manufacturers.setName(res.getString("manufct_name"));
                     manufacturers.setLocation(res.getString("manufct_location"));
-                    instruments.add(manufacturers);
+                    manufacturer.add(manufacturers);
                 }
             }
-            return instruments;
+            return manufacturer;
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -95,7 +95,7 @@ public class ManufacturersDAOimpl implements ManufacturersDAO {
                 statement.setInt(1, manufactureId);
                 try (ResultSet res = statement.executeQuery()) {
                     if (res.next()) {
-                        manufacturers.setManuf_id(res.getInt("manufctPK_id"));
+                        manufacturers.setManuf_id(res.getInt("manufacturePK_id"));
                         manufacturers.setName(res.getString("manufct_name"));
                         manufacturers.setLocation(res.getString("manufct_location"));
                     }
