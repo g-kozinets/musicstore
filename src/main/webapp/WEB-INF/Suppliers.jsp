@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <label for="delivery_price">
-                Suppliers location: <input class="form-control" type="text" id="delivery_price" name="delivery_price" value="<c:out value="${suppliers.delivery_price}" />" />
+                Suppliers delivery price: <input class="form-control" type="text" id="delivery_price" name="delivery_price" value="<c:out value="${suppliers.delivery_price}" />" />
             </label>
         </div>
         <input type="submit" value="Submit" class="btn btn-danger" />

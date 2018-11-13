@@ -31,7 +31,7 @@ public class InstrumentsController extends HttpServlet {
         String forward = "";
         String action = request.getParameter("action");
         if ("delete".equalsIgnoreCase(action)) {
-            int productId = Integer.parseInt(request.getParameter("addressID"));
+            int productId = Integer.parseInt(request.getParameter("instrumentID"));
 
             instrumentsDAOImpl.removeInstrument(productId);
 
@@ -63,11 +63,11 @@ public class InstrumentsController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Instruments instruments = new Instruments();
         //addresses.setaddressID(Integer.valueOf(request.getParameter("addressID")));
-        instruments.setInst_name(request.getParameter("Inst_name"));
-        instruments.setType(request.getParameter("Type"));
-        instruments.setManufFK_id(Integer.valueOf(request.getParameter("ManufFK_id")));
-        instruments.setSupplFK_id(Integer.valueOf(request.getParameter("SupplFK_id")));
-        instruments.setPrice(Double.valueOf(request.getParameter("Price")));
+        instruments.setInst_name(request.getParameter("inst_name"));
+        instruments.setType(request.getParameter("type"));
+        instruments.setManufFK_id(Integer.valueOf(request.getParameter("manufFK_id")));
+        instruments.setSupplFK_id(Integer.valueOf(request.getParameter("supplFK_id")));
+        instruments.setPrice(Double.valueOf(request.getParameter("price")));
         String instrumentId = request.getParameter("instrumentID");
 
         if (instrumentId == null || instrumentId.isEmpty()) {

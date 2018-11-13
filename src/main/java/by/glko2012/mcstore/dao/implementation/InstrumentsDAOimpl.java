@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 public class InstrumentsDAOimpl implements InstrumentsDAO {
 
-        private static final String INSERT_INSTRUMENT = "INSERT INTO mydb.instruments (instr_name, 'type', manufct_FK_id, supplierFK_id, price) VALUES (?, ?, ?, ?, ?)";
+        private static final String INSERT_INSTRUMENT = "INSERT INTO mydb.instruments (instr_name, type, manufctFK_id, supplierFK_id, price) VALUES (?, ?, ?, ?, ?)";
         private static final String SELECT_INSTRUMENT = "SELECT * FROM mydb.instruments WHERE instruments.instrPK_id =?";
         private static final String SELECT_INSTRUMENTS = "SELECT * FROM mydb.instruments";
-        private static final String UPDATE_INSTRUMENT = "UPDATE mydb.instruments SET instr_name=?, type=?, manufct_id, supplierFK_id WHERE instruments.instrPK_ID=?";
+        private static final String UPDATE_INSTRUMENT = "UPDATE mydb.instruments SET instr_name=?, type=?, manufctFK_id=?, supplierFK_id=?, price=? WHERE instruments.instrPK_ID=?";
         private static final String DELETE_INSTRUMENT = "DELETE FROM mydb.instruments WHERE instruments.instrPK_ID=?";
         private static final String NEXT_INCREMENT = "SELECT auto_increment FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'instruments'";
 
@@ -66,7 +66,8 @@ public class InstrumentsDAOimpl implements InstrumentsDAO {
                     statement.setString(2, instruments.getType());
                     statement.setInt(3, instruments.getManufFK_id());
                     statement.setInt(4, instruments.getSupplFK_id());
-                    statement.setInt(5, instruments.getInstrumentID());
+                    statement.setDouble(5, instruments.getPrice());
+                    statement.setInt(6, instruments.getInstrumentID());
 
                     statement.executeUpdate();
                 }

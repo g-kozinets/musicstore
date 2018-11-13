@@ -14,7 +14,7 @@ public class OrdersDAOimpl implements OrdersDAO {
     private static final String INSERT_ORDER = "INSERT INTO mydb.orders (order_name, addressFK_id, total_price, instrFK_id) VALUES (?, ?, ?, ?)";
     private static final String SELECT_ORDER = "SELECT * FROM mydb.orders WHERE orders.orderPK_id =?";
     private static final String SELECT_ORDERS = "SELECT * FROM mydb.orders";
-    private static final String UPDATE_ORDER = "UPDATE mydb.orders SET order_name=?, order_addressFK_id=?, total_price=?, instrFK_id=? WHERE orders.orderPK_id=?";
+    private static final String UPDATE_ORDER = "UPDATE mydb.orders SET order_name=?, addressFK_id=?, total_price=?, instrFK_id=? WHERE orders.orderPK_id=?";
     private static final String DELETE_ORDER = "DELETE FROM mydb.orders WHERE orders.orderPK_id=?";
 
     private final DataSource dataSource;
