@@ -1,6 +1,19 @@
 package by.glko2012.mcstore.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "mydb.addresses")
 public class Addresses {
+
+    public Addresses(){}
+    public Addresses(String street_name, String street_number) {
+        this.street_name = street_name;
+        this.street_number = street_number;
+    }
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int addressID;
     private String street_name;
     private String street_number;

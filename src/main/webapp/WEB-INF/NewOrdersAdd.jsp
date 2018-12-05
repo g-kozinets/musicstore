@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="total_price">
-                Total price: <input class="form-control" type="text" id="total_price" name="total_price" readonly value="Price will be calculated" />
+                Total price: <input class="form-control" type="text" id="total_price" name="total_price" readonly value="Total price will be calculated" />
             </label>
         </div>
         <input type="submit" value="Submit" class="btn btn-danger" />

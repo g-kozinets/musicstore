@@ -1,14 +1,10 @@
 package by.glko2012.mcstore.controller;
 
 
-import by.glko2012.mcstore.dao.AddressesDAO;
 import by.glko2012.mcstore.dao.InstrumentsDAO;
 import by.glko2012.mcstore.dao.OrdersDAO;
 import by.glko2012.mcstore.dao.SuppliersDAO;
 import by.glko2012.mcstore.dao.factory.DAOFactory;
-import by.glko2012.mcstore.dao.factory.DataSourceFactory;
-import by.glko2012.mcstore.dao.implementation.InstrumentsDAOimpl;
-import by.glko2012.mcstore.model.Addresses;
 import by.glko2012.mcstore.model.Instruments;
 import by.glko2012.mcstore.model.Orders;
 import by.glko2012.mcstore.model.Suppliers;

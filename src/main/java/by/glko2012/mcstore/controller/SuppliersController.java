@@ -1,12 +1,8 @@
 package by.glko2012.mcstore.controller;
 
 
-import by.glko2012.mcstore.dao.AddressesDAO;
-import by.glko2012.mcstore.dao.ManufacturersDAO;
 import by.glko2012.mcstore.dao.SuppliersDAO;
 import by.glko2012.mcstore.dao.factory.DAOFactory;
-import by.glko2012.mcstore.model.Addresses;
-import by.glko2012.mcstore.model.Manufacturers;
 import by.glko2012.mcstore.model.Suppliers;
 
 import javax.servlet.RequestDispatcher;
