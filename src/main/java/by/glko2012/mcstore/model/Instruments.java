@@ -1,11 +1,37 @@
 package by.glko2012.mcstore.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Instruments {
+    public Instruments() {
+    }
+    public Instruments(String inst_name, String type, int manufFK_id, int supplFK_id, double price) {
+        this.inst_name = inst_name;
+        this.type = type;
+        this.manufFK_id = manufFK_id;
+        this.supplFK_id = supplFK_id;
+        this.price = price;
+    }
+
+    @Id
+    @Column(name = "instrPK_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int instrumentID;
+
+    @Column(name = "instr_name")
     private String inst_name;
+
+    @Column(name = "type")
     private String type;
+
+    @Column(name = "manufctFK_id")
     private int manufFK_id;
+
+    @Column(name = "supplierFK_id")
     private int supplFK_id;
+
+    @Column(name = "price")
     private double price;
 
     public int getInstrumentID() {

@@ -1,9 +1,30 @@
 package by.glko2012.mcstore.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Suppliers {
+    public Suppliers() {
+    }
+
+    public Suppliers(String suppl_name, String suppl_location, double delivery_price) {
+        this.suppl_name = suppl_name;
+        this.suppl_location = suppl_location;
+        this.delivery_price = delivery_price;
+    }
+
+    @Id
+    @Column(name = "supplierPK_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int suppl_id;
+
+    @Column(name = "supplier_name")
     private String suppl_name;
+
+    @Column(name = "supplier_location")
     private String suppl_location;
+
+    @Column(name = "delivery_price")
     private double delivery_price;
 
     public int getSuppl_id() {

@@ -1,10 +1,35 @@
 package by.glko2012.mcstore.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Orders {
+
+    public Orders() {
+    }
+
+    public Orders(String order_name, int addressFK_id, double total_price, int instrFK_id) {
+        this.order_name = order_name;
+        this.addressFK_id = addressFK_id;
+        this.total_price = total_price;
+        this.instrFK_id = instrFK_id;
+    }
+
+    @Id
+    @Column(name = "orderPK_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int order_id;
+
+    @Column(name = "order_name")
     private String order_name;
+
+    @Column(name = "addressFK_id")
     private int addressFK_id;
+
+    @Column(name = "total_price")
     private double total_price;
+
+    @Column(name = "instrFK_id")
     private int instrFK_id;
 
     public int getOrder_id() {

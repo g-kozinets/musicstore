@@ -69,7 +69,9 @@
                             <c:out value="${address.street_number}"/>
                         </td>
                         <td td class="overflowHidden">
-
+                            <a href="AddressesController?action=edit&addressID=<c:out value="${address.adressID}"/>">Update</a>
+                            <a>/</a>
+                            <a href="AddressesController?action=delete&addressID=<c:out value="${address.adressID}"/>">Delete</a>
                         </td>
 
                     </tr>

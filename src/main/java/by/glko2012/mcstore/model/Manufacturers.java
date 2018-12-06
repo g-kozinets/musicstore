@@ -1,8 +1,26 @@
 package by.glko2012.mcstore.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Manufacturers {
+    public Manufacturers() {
+    }
+
+    public Manufacturers(String location, String name) {
+        this.location = location;
+        this.name = name;
+    }
+
+    @Column(name = "manufct_location")
     private String location;
+
+    @Column(name = "manufct_name")
     private String name;
+
+    @Id
+    @Column(name = "manufacturePK_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int manuf_id;
 
     //constructors   //getter-setters
