@@ -58,7 +58,7 @@ public class AddressDAOimpl implements AddressesDAO  {
 
                     statement.setString(1, address.getStreet_name());
                     statement.setString(2, address.getStreet_number());
-                    statement.setInt(3, address.getAddressID());
+                    statement.setInt(3, address.getAdressID());
 
                     statement.executeUpdate();
                 }

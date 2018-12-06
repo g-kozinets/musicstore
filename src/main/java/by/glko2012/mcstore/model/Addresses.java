@@ -3,7 +3,6 @@ package by.glko2012.mcstore.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "mydb.addresses")
 public class Addresses {
 
     public Addresses(){}
@@ -13,17 +12,22 @@ public class Addresses {
     }
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private int addressID;
+    @Column(name = "adressPK_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int adressID;
+
+    @Column(name = "street_name")
     private String street_name;
+
+    @Column(name = "street_number")
     private String street_number;
     //constructors   //getter-setters
     public int setaddressID(int address) {
-        return this.addressID = address;
+        return this.adressID = address;
     }
 
-    public int getAddressID() {
-        return this.addressID;
+    public int getAdressID() {
+        return this.adressID;
     }
 
     public String setstreet_name(String street_name) {
