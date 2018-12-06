@@ -4,8 +4,12 @@ import by.glko2012.mcstore.model.*;
 import by.glko2012.mcstore.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -64,5 +68,19 @@ public class SpringController {
         return "jsp/listOrders";
     }
 
+    @RequestMapping(value = "/AddressInsert", method = RequestMethod.GET)
+    public ModelAndView showForm() {
+        return new ModelAndView("jsp/AddressInsert", "addresses", new Addresses());
+    }
+
+
+    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    public String submit(@Valid @ModelAttribute("addresses")Addresses addresses,
+                         BindingResult result, ModelMap model){
+        addressessRepo.save(addresses);
+
+
+        return "jsp/listAddress";
+    }
 
 }

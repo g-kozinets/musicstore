@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <c:url value="/css/style.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
 
 </head>
@@ -78,7 +77,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="AddressesController?action=insert" class="btn btn-danger" role="button">Add new</a>
+            <a href="/AddressInsert" class="btn btn-danger" role="button">Add new</a>
 
         </div>
     </section>
