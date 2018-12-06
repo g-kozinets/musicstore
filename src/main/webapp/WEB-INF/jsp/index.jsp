@@ -8,6 +8,6 @@
     <title>CM Store</title>
 </head>
 <body>
-<jsp:forward page="/AddressesController?action=listAddress"/>
+
 </body>
 </html>

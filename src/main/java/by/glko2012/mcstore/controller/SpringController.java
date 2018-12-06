@@ -19,7 +19,7 @@ import java.util.Map;
             Iterable<Addresses> addresses = addressessRepo.findAll();
 
             model.put("addresses", addresses);
-            return "listAddress";
+            return "jsp/listAddress";
         }
 
     }

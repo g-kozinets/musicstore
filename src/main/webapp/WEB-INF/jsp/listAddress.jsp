@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%--
   Created by IntelliJ IDEA.
   User: gleb
@@ -21,6 +22,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <c:url value="/css/style.css" var="jstlCss" />
+    <link href="${jstlCss}" rel="stylesheet" />
 
 </head>
 <body>
@@ -56,7 +60,7 @@
                 <c:forEach items="${addresses}" var="address">
                     <tr>
                         <td class="overflowHidden">
-                            <c:out value="${address.addressID}"/>
+                            <c:out value="${address.adressID}"/>
                         </td>
                         <td class="overflowHidden">
                             <c:out value="${address.street_name}"/>
@@ -65,9 +69,7 @@
                             <c:out value="${address.street_number}"/>
                         </td>
                         <td td class="overflowHidden">
-                            <a href="AddressesController?action=edit&addressID=<c:out value="${address.addressID}"/>">Update</a>
-                            <a>/</a>
-                            <a href="AddressesController?action=delete&addressID=<c:out value="${address.addressID}"/>">Delete</a>
+
                         </td>
 
                     </tr>
